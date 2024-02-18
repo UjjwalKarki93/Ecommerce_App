@@ -15,10 +15,9 @@ class PrimaryHeaderContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomCurvedWIdget(
       child: Container(
-        padding: const EdgeInsets.all(0),
         color: EColors.primary,
         child: SizedBox(
-          height: 400,
+          height: 350,
           child: Stack(
             children: [
               Positioned(
