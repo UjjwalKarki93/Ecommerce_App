@@ -1,4 +1,7 @@
+import 'package:ecommerce_app/features/personalization/screens/settings/setting.dart';
 import 'package:ecommerce_app/features/shop/screens/home/home.dart';
+import 'package:ecommerce_app/features/shop/screens/store/store.dart';
+import 'package:ecommerce_app/features/shop/screens/wishlist/wishlist.dart';
 import 'package:ecommerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,7 +30,7 @@ class NavigationMenu extends StatelessWidget {
             NavigationDestination(icon: Icon(Icons.home), label: 'home'),
             NavigationDestination(
                 icon: Icon(Icons.store_mall_directory_sharp), label: 'store'),
-            NavigationDestination(icon: Icon(Iconsax.heart), label: 'carts'),
+            NavigationDestination(icon: Icon(Iconsax.heart), label: 'wishlist'),
             NavigationDestination(icon: Icon(Iconsax.user), label: 'profile'),
           ],
         ),
@@ -42,8 +45,8 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeScreen(),
-    Container(color: Colors.black),
-    Container(color: Colors.blue),
-    Container(color: Colors.yellow),
+    const StoreScreen(),
+    const WishListScreen(),
+    const SettingScreen(),
   ];
 }

@@ -2,14 +2,17 @@ import 'package:ecommerce_app/common/styles/shadows.dart';
 import 'package:ecommerce_app/common/widgets/custom_shapes/container/rounded_container.dart';
 import 'package:ecommerce_app/common/widgets/images/rounded_rect_image.dart';
 import 'package:ecommerce_app/common/widgets/texts/product_title_text.dart';
+import 'package:ecommerce_app/features/shop/screens/product_details/product_detail.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/image_strings.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../icons/circular_icon.dart';
+import '../../texts/brand_tiltle_text_with_verified_icon.dart';
 import '../../texts/product_price_text.dart';
 
 class ProductCardsVertical extends StatelessWidget {
@@ -20,13 +23,13 @@ class ProductCardsVertical extends StatelessWidget {
     final isDark = HelperFunctions.isDarkMode(context);
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => const ProductDetailsScreen()),
       child: Container(
         width: 180,
         decoration: BoxDecoration(
           boxShadow: [CardShadowStyle.verticalProductShadow],
           borderRadius: BorderRadius.circular(AppSizes.productImageRadius),
-          color: isDark ? EColors.darkerGrey : EColors.white,
+          color: isDark ? EColors.darkerGrey : EColors.light,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,61 +75,54 @@ class ProductCardsVertical extends StatelessWidget {
             const SizedBox(height: AppSizes.spaceBtwItems / 2),
 
             /// --- product details
-            Padding(
-              padding: const EdgeInsets.only(left: AppSizes.sm),
+            const Padding(
+              padding: EdgeInsets.only(left: AppSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const ProductTitleText(
+                  ProductTitleText(
                     title: 'Goldstar Hiking Shoes',
                     smallSize: true,
                   ),
 
                   /// -- manufacturer with verfied icon
-                  Row(
-                    children: [
-                      Text(
-                        'Goldstar',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(width: AppSizes.xs),
-                      const Icon(
-                        Iconsax.verify5,
-                        size: AppSizes.iconXs,
-                        color: EColors.primary,
-                      )
-                    ],
+                  BrandTitleWithVerfiedIcon(
+                    title: 'GoldStar',
+                  ),
+                ],
+              ),
+            ),
+
+            /// Adding spacer to keep height of the each box same incase product detail heading is of 1 0r 2 line
+            const Spacer(),
+
+            /// --- price tag & addToCART icon
+            Padding(
+              padding: const EdgeInsets.only(left: AppSizes.sm),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  /// price tag
+                  const ProductPriceText(
+                    price: '36.67',
                   ),
 
-                  /// --- price tag & addToCART icon
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      /// price tag
-                      const ProductPriceText(
-                        price: '36.67',
+                  /// add button
+                  Container(
+                    decoration: const BoxDecoration(
+                        color: EColors.black,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(AppSizes.cardRadiusMd),
+                            bottomRight:
+                                Radius.circular(AppSizes.productImageRadius))),
+                    child: const SizedBox(
+                      height: AppSizes.iconLg * 1.2,
+                      width: AppSizes.iconLg * 1.2,
+                      child: Icon(
+                        Iconsax.add,
+                        color: EColors.white,
                       ),
-
-                      /// add button
-                      Container(
-                        decoration: const BoxDecoration(
-                            color: EColors.black,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(AppSizes.cardRadiusMd),
-                                bottomRight: Radius.circular(
-                                    AppSizes.productImageRadius))),
-                        child: const SizedBox(
-                          height: AppSizes.iconLg * 1.2,
-                          width: AppSizes.iconLg * 1.2,
-                          child: Icon(
-                            Iconsax.add,
-                            color: EColors.white,
-                          ),
-                        ),
-                      )
-                    ],
+                    ),
                   )
                 ],
               ),

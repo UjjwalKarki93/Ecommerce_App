@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/features/authentication/screens/onBoarding/onboarding.dart';
+import 'package:ecommerce_app/utils/splash_screen.dart';
 import 'package:ecommerce_app/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,6 +14,6 @@ class App extends StatelessWidget {
         themeMode: ThemeMode.system,
         theme: AppTheme.lightThemeData,
         darkTheme: AppTheme.darkThemeData,
-        home: const OnBoardingScreen());
+        home: const SplashScreen());
   }
 }

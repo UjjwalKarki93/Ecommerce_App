@@ -1,6 +1,8 @@
 import 'package:ecommerce_app/common/widgets/products/cart/cart_menu_icon.dart';
+import 'package:ecommerce_app/features/shop/screens/cart/cart.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../common/widgets/appbar/custom_appbar.dart';
 import '../../../../../utils/constants/text_strings.dart';
@@ -32,7 +34,9 @@ class HomeAppBar extends StatelessWidget {
           )
         ],
       ),
-      actions: [CartCountIcon(onPressedIcon: () {})],
+      actions: [
+        CartCountIcon(onPressedIcon: () => Get.to(() => const CartScreen()))
+      ],
     );
   }
 }

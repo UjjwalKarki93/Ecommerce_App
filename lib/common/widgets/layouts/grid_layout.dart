@@ -19,11 +19,11 @@ class GridLayout extends StatelessWidget {
         shrinkWrap: true,
         padding: EdgeInsets.zero,
         physics: const NeverScrollableScrollPhysics(),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             mainAxisSpacing: AppSizes.gridViewSpacing,
             crossAxisSpacing: AppSizes.gridViewSpacing,
-            mainAxisExtent: 280),
+            mainAxisExtent: mainAxisExtent),
         itemBuilder: itemBuilder);
   }
 }

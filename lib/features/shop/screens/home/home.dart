@@ -39,6 +39,7 @@ class HomeScreen extends StatelessWidget {
                     text: 'Search Items',
                     icon: Iconsax.search_favorite,
                   ),
+                  SizedBox(height: AppSizes.spaceBtwItems),
 
                   /// categories
                   Padding(
@@ -54,7 +55,8 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(height: AppSizes.spaceBtwItems),
 
                         /// --------categories list
-                        HomeCategoriesList()
+                        HomeCategoriesList(),
+                        SizedBox(height: AppSizes.spaceBtwSections)
                       ],
                     ),
                   )
