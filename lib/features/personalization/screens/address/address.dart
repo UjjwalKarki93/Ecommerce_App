@@ -22,13 +22,13 @@ class AddressScreen extends StatelessWidget {
             style: Theme.of(context).textTheme.headlineSmall),
         showBackArrow: true,
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(AppSizes.defaultSpace),
+          padding: EdgeInsets.all(AppSizes.defaultSpace),
           child: Column(
             children: [
-              const SingleAddress(isSelected: true),
-              const SingleAddress(isSelected: false),
+              SingleAddress(isSelected: true),
+              SingleAddress(isSelected: false),
             ],
           ),
         ),

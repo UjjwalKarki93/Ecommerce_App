@@ -6,6 +6,7 @@ import 'package:ecommerce_app/common/widgets/custom_shapes/container/primary_hea
 import 'package:ecommerce_app/common/widgets/texts/section_header.dart';
 import 'package:ecommerce_app/features/personalization/screens/address/address.dart';
 import 'package:ecommerce_app/features/personalization/screens/profile/profile.dart';
+import 'package:ecommerce_app/features/shop/screens/order/order.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 
 import 'package:ecommerce_app/utils/constants/sizes.dart';
@@ -74,7 +75,7 @@ class SettingScreen extends StatelessWidget {
                     leadingIcon: Iconsax.bag_tick,
                     title: 'My Orders',
                     subTitle: 'Track your orders',
-                    onTap: () {},
+                    onTap: () => Get.to(() => const OrderScreen()),
                   ),
                   MenuTile(
                     leadingIcon: Iconsax.bank,

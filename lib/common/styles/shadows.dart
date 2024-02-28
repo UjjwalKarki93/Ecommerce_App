@@ -7,5 +7,5 @@ class CardShadowStyle {
       blurRadius: 50,
       spreadRadius: 7,
       offset: const Offset(0, 2));
-  static final horizontalProductShadow = BoxShadow();
+  static const horizontalProductShadow = BoxShadow();
 }
