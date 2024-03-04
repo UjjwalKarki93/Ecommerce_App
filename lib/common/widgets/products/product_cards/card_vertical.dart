@@ -29,7 +29,7 @@ class ProductCardsVertical extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [CardShadowStyle.verticalProductShadow],
           borderRadius: BorderRadius.circular(AppSizes.productImageRadius),
-          color: isDark ? EColors.darkerGrey : EColors.light,
+          color: isDark ? EColors.darkerGrey : EColors.white,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,7 +56,7 @@ class ProductCardsVertical extends StatelessWidget {
                       backgroundColor: EColors.secondary.withOpacity(0.8),
                       padding: const EdgeInsets.symmetric(
                           horizontal: AppSizes.sm, vertical: AppSizes.xs),
-                      child: Text('25%'),
+                      child: const Text('25%'),
                     ),
                   ),
 

@@ -5,8 +5,6 @@ import 'package:ecommerce_app/features/shop/screens/cart/widget/cart_items.dart'
 import 'package:ecommerce_app/features/shop/screens/checkout/widget/billing_address_section.dart';
 import 'package:ecommerce_app/features/shop/screens/checkout/widget/billing_payment_section.dart';
 import 'package:ecommerce_app/features/shop/screens/order/order.dart';
-import 'package:ecommerce_app/navigation_menu.dart';
-import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/image_strings.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/helpers/helper_functions.dart';

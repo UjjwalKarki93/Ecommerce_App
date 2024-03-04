@@ -42,7 +42,7 @@ class RoundedRectImage extends StatelessWidget {
           padding: padding,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(borderRadius),
-            color: backgroundColor ?? (isDark ? EColors.black : EColors.white),
+            color: backgroundColor ?? (isDark ? EColors.black : EColors.light),
           ),
           child: ClipRRect(
             borderRadius: applyImageRadius
