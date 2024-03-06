@@ -13,12 +13,14 @@ class BrandCard extends StatelessWidget {
   const BrandCard({
     super.key,
     this.showBorder = true,
+    this.onTap,
   });
   final bool showBorder;
+  final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: RoundedContainer(
         padding: const EdgeInsets.all(AppSizes.sm),
         showBorder: showBorder,
@@ -37,6 +39,8 @@ class BrandCard extends StatelessWidget {
             ),
 
             /// -- brand title text
+            // [expanded] & [mainAXIS.min] is to keep the elements in vertical center
+            // and also to keep text inside bpundaries
             Expanded(
               child: Column(
                 mainAxisSize: MainAxisSize.min,

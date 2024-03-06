@@ -45,22 +45,22 @@ class CheckoutScreen extends StatelessWidget {
                 showBorder: true,
                 backgroundColor: dark ? Colors.black : Colors.white,
                 padding: const EdgeInsets.all(AppSizes.md),
-                child: Column(
+                child: const Column(
                   children: [
                     /// pricing
-                    const BillingAmountSection(),
-                    const SizedBox(height: AppSizes.spaceBtwItems),
+                    BillingAmountSection(),
+                    SizedBox(height: AppSizes.spaceBtwItems),
 
                     /// dicider
-                    const Divider(),
-                    const SizedBox(height: AppSizes.spaceBtwItems),
+                    Divider(),
+                    SizedBox(height: AppSizes.spaceBtwItems),
 
                     /// payment methods
-                    const BillingPaymentSection(),
-                    const SizedBox(height: AppSizes.spaceBtwItems),
+                    BillingPaymentSection(),
+                    SizedBox(height: AppSizes.spaceBtwItems),
 
                     /// adddress
-                    const BillingAddressSection(),
+                    BillingAddressSection(),
                   ],
                 ),
               )

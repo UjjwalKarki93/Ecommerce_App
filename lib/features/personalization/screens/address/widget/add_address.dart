@@ -9,7 +9,7 @@ class AddNewAddressForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: Text('Add new address'), showBackArrow: true),
+      appBar: const CustomAppBar(title: Text('Add new address'), showBackArrow: true),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(AppSizes.defaultSpace),

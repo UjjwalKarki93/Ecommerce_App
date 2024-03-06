@@ -4,12 +4,14 @@ import 'package:ecommerce_app/common/widgets/layouts/grid_layout.dart';
 import 'package:ecommerce_app/common/widgets/products/product_cards/card_vertical.dart';
 
 import 'package:ecommerce_app/common/widgets/texts/section_header.dart';
+import 'package:ecommerce_app/features/shop/screens/All_product/all_product.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 
 import 'package:ecommerce_app/utils/constants/image_strings.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:iconsax/iconsax.dart';
 
@@ -80,6 +82,7 @@ class HomeScreen extends StatelessWidget {
                   SectionHeader(
                     sectionTitle: "Trending Products",
                     textColor: isDark ? EColors.white : EColors.black,
+                    onPressed: () => Get.to(() => const AllProductScreen()),
                   ),
 
                   /// vertical product cards in a grid layout

@@ -4,7 +4,9 @@ import 'package:ecommerce_app/common/widgets/products/product_cards/card_horizon
 import 'package:ecommerce_app/common/widgets/texts/section_header.dart';
 import 'package:ecommerce_app/utils/constants/image_strings.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class SubCategoryScreen extends StatelessWidget {
   const SubCategoryScreen({super.key});
@@ -12,7 +14,7 @@ class SubCategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: Text('Sports shirts'),
         showBackArrow: true,
       ),
@@ -34,7 +36,17 @@ class SubCategoryScreen extends StatelessWidget {
                   SectionHeader(
                       sectionTitle: 'Sports shirts', onPressed: () {}),
                   const SizedBox(height: AppSizes.md),
-                  const HorizontalProductCard(),
+                  SizedBox(
+                    height: 120,
+                    child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 4,
+                        separatorBuilder: (_, index) => const SizedBox(
+                              width: AppSizes.spaceBtwItems,
+                            ),
+                        itemBuilder: (_, index) =>
+                            const HorizontalProductCard()),
+                  ),
                 ],
               )
             ],

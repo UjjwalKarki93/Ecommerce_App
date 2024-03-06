@@ -97,7 +97,7 @@ class UserProfileScreen extends StatelessWidget {
                 ),
                 TextButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       'Delete Account',
                       style: TextStyle(color: Colors.red),
                     ))

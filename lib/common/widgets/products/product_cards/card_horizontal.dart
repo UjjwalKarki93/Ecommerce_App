@@ -1,5 +1,8 @@
 import 'package:ecommerce_app/common/widgets/custom_shapes/container/rounded_container.dart';
 import 'package:ecommerce_app/common/widgets/images/rounded_rect_image.dart';
+import 'package:ecommerce_app/common/widgets/texts/brand_tiltle_text_with_verified_icon.dart';
+import 'package:ecommerce_app/common/widgets/texts/product_price_text.dart';
+import 'package:ecommerce_app/common/widgets/texts/product_title_text.dart';
 import 'package:ecommerce_app/utils/constants/image_strings.dart';
 import 'package:ecommerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,7 +14,6 @@ import 'package:iconsax/iconsax.dart';
 import '../../../../features/shop/screens/product_details/product_detail.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
-import '../../../styles/shadows.dart';
 import '../../icons/circular_icon.dart';
 
 class HorizontalProductCard extends StatelessWidget {
@@ -23,22 +25,22 @@ class HorizontalProductCard extends StatelessWidget {
     return GestureDetector(
       onTap: () => Get.to(() => const ProductDetailsScreen()),
       child: Container(
-        width: 320,
+        width: 310,
+        padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
-          boxShadow: [CardShadowStyle.verticalProductShadow],
           borderRadius: BorderRadius.circular(AppSizes.productImageRadius),
-          color: isDark ? EColors.darkerGrey : EColors.white,
+          color: isDark ? EColors.darkerGrey : EColors.lightContainer,
         ),
         child: Row(
           children: [
             /// Thumbnail
             RoundedContainer(
               height: 120,
-              padding: const EdgeInsets.all(AppSizes.md),
-              backgroundColor: isDark ? EColors.dark : EColors.light,
+              padding: const EdgeInsets.all(AppSizes.sm),
+              backgroundColor: isDark ? EColors.darkerGrey : EColors.light,
               child: Stack(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 120,
                     width: 120,
                     child: RoundedRectImage(
@@ -69,6 +71,53 @@ class HorizontalProductCard extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+            ),
+
+            /// --details
+            SizedBox(
+              width: 172,
+              child: Padding(
+                padding:
+                    const EdgeInsets.only(top: AppSizes.sm, left: AppSizes.sm),
+                child: Column(
+                  children: [
+                    const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ProductTitleText(
+                            title: 'Green Nike Half sleev shirt',
+                            smallSize: true),
+                        SizedBox(height: AppSizes.spaceBtwItems / 2),
+                        BrandTitleWithVerfiedIcon(title: 'Nike')
+                      ],
+                    ),
+                    const Spacer(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const ProductPriceText(price: '230.03'),
+                        Container(
+                          decoration: const BoxDecoration(
+                              color: EColors.black,
+                              borderRadius: BorderRadius.only(
+                                  topLeft:
+                                      Radius.circular(AppSizes.cardRadiusMd),
+                                  bottomRight: Radius.circular(
+                                      AppSizes.productImageRadius))),
+                          child: const SizedBox(
+                            height: AppSizes.iconLg * 1.2,
+                            width: AppSizes.iconLg * 1.2,
+                            child: Icon(
+                              Iconsax.add,
+                              color: EColors.white,
+                            ),
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
             )
           ],
