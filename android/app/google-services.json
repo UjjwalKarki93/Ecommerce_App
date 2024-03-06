@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "158041036364",
+    "project_id": "meroshop-20fac",
+    "storage_bucket": "meroshop-20fac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158041036364:android:ffc892612d027410b386e9",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKraag74U_8Us71A9DVBcXa4oj8RapaYc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

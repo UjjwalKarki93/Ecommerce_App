@@ -4,9 +4,8 @@ import 'package:ecommerce_app/common/widgets/products/product_cards/card_horizon
 import 'package:ecommerce_app/common/widgets/texts/section_header.dart';
 import 'package:ecommerce_app/utils/constants/image_strings.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class SubCategoryScreen extends StatelessWidget {
   const SubCategoryScreen({super.key});
