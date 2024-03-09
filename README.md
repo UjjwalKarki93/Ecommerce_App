@@ -13,7 +13,7 @@ This is a ongoing App project for a fully featured Ecommerce platform as a part 
     -- ![Screenshot_2024-03-09-21-35-37-895-edit_com example ecommerce_app](https://github.com/UjjwalKarki93/Ecommerce_App/assets/97448134/c1d576b1-4958-4464-b034-06b5715bfd57)
 
 - Login Screen(Light Theme!
-  -- [Uploading Screenshot_2024-03-09-21-37-33-055-edit_com.example.ecommerce_app.jpg…]()
+  --  ![Uploading Screenshot_2024-03-09-21-37-33-055-edit_com.example.ecommerce_app.jpg…]()
 )
 
 
