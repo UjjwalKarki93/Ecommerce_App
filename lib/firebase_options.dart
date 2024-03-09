@@ -70,6 +70,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '158041036364',
     projectId: 'meroshop-20fac',
     storageBucket: 'meroshop-20fac.appspot.com',
+    iosClientId: '158041036364-rob4ghd27i5gdh70k0hecpbobf6kjla4.apps.googleusercontent.com',
     iosBundleId: 'com.example.ecommerceApp',
   );
 }
