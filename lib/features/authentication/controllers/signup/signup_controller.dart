@@ -33,11 +33,15 @@ class SignUpController extends GetxController {
       /// check internet connection
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
+        FullScreenLoader.stopLoadingPage();
+
         return;
       }
 
       /// form validation
       if (!(signupFormKey.currentState!.validate())) {
+        FullScreenLoader.stopLoadingPage();
+
         return;
       }
 
@@ -70,14 +74,16 @@ class SignUpController extends GetxController {
       Loaders.successSnackBar(
           title: 'Your account has been created! Verify email to continue!');
 
+      FullScreenLoader.stopLoadingPage();
+
       /// move to verify email screen
       Get.to(() => const VerifyEmailScreen());
     } catch (err) {
+      FullScreenLoader.stopLoadingPage();
+
       // show some genral error to the user
       Loaders.errorSnackBar(
           title: 'Something Went Wrong!', message: err.toString());
-    } finally {
-      FullScreenLoader.stopLoadingPage();
     }
   }
 }

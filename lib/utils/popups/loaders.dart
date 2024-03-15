@@ -12,7 +12,7 @@ class Loaders {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
       SnackBar(
           elevation: 0,
-          duration: const Duration(seconds: 3),
+          duration: const Duration(seconds: 8),
           backgroundColor: Colors.transparent,
           content: Container(
             padding: const EdgeInsets.all(12),
@@ -30,7 +30,7 @@ class Loaders {
     );
   }
 
-  static successSnackBar({required title, message = '', duration = 3}) {
+  static successSnackBar({required title, message = '', duration = 8}) {
     Get.snackbar(title, message,
         isDismissible: true,
         shouldIconPulse: true,
@@ -42,7 +42,7 @@ class Loaders {
         icon: const Icon(Iconsax.check, color: Colors.white));
   }
 
-  static warningSnackBar({required title, message = '', duration = 3}) {
+  static warningSnackBar({required title, message = '', duration = 8}) {
     Get.snackbar(title, message,
         isDismissible: true,
         shouldIconPulse: true,
@@ -54,7 +54,7 @@ class Loaders {
         icon: const Icon(Iconsax.warning_2, color: Colors.white));
   }
 
-  static errorSnackBar({required title, message = '', duration = 3}) {
+  static errorSnackBar({required title, message = '', duration = 8}) {
     Get.snackbar(title, message,
         isDismissible: true,
         shouldIconPulse: true,

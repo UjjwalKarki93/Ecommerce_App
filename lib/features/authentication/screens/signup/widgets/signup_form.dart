@@ -2,6 +2,7 @@ import 'package:ecommerce_app/features/authentication/controllers/signup/signup_
 import 'package:ecommerce_app/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../utils/constants/sizes.dart';
@@ -89,15 +90,23 @@ class SignUpForm extends StatelessWidget {
           const SizedBox(width: AppSizes.spaceBtwInputFields),
 
           /// password
-          TextFormField(
-            obscureText: true,
-            expands: false,
-            controller: controller.password,
-            validator: (value) => Validator.validatePassword(value),
-            decoration: const InputDecoration(
-              labelText: Texts.password,
-              prefixIcon: Icon(Iconsax.user_edit),
-              suffix: Icon(Iconsax.eye_slash),
+          Obx(
+            () => TextFormField(
+              obscureText: controller.hidePassword.value,
+              expands: false,
+              controller: controller.password,
+              validator: (value) => Validator.validatePassword(value),
+              decoration: InputDecoration(
+                  labelText: Texts.password,
+                  prefixIcon: const Icon(Iconsax.user_edit),
+                  suffix: IconButton(
+                      onPressed: () {
+                        final hidePsw = controller.hidePassword.value;
+                        controller.hidePassword.value = !hidePsw;
+                      },
+                      icon: Icon(controller.hidePassword.value
+                          ? Iconsax.eye_slash
+                          : Iconsax.eye))),
             ),
           ),
           const SizedBox(height: AppSizes.spaceBtwSections),

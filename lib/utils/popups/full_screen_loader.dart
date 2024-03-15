@@ -33,6 +33,6 @@ class FullScreenLoader {
 
   /// method to stop currently opened loading page
   static stopLoadingPage() {
-    Navigator.of(Get.overlayContext!).pop;
+    Navigator.of(Get.overlayContext!).pop();
   }
 }
